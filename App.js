@@ -1,8 +1,40 @@
 import React, { Component } from "react";
 import { View, StyleSheet } from "react-native";
 import { Table, TableWrapper, Row, Rows, Col, Cols, Cell } from 'react-native-table-component';
+import {TabNavigator} from "react-navigation";
+import FirstScreen from './tabs/FirstScreen';
+import SecondScreen from './tabs/SecondScreen';
+import ThirdScreen from './tabs/ThirdScreen';
 
-export default class tableView extends Component {
+
+var MyScreenNavigator = TabNavigator({
+  Tab1: {screen: FirstScreen},
+  Tab2: {screen:SecondScreen},
+  Tab3: {screen: ThirdScreen}
+},
+{
+  tabBarPosition: 'bottom',
+  swipeEnabled: true,
+  tabBarOptions:{
+    activeTintColor: 'white',
+    activeBackgroundColor: 'green',
+    inactiveTintColor: 'black',
+    inactiveBackgroundColor: 'green',
+    labelStyle: {
+      fontSize: 15,
+      padding: 10
+    }
+  }
+}
+);
+
+MyScreenNavigator.navigationOptions = {
+  title: "Tab Example"
+};
+
+export default MyScreenNavigator;
+
+/*export default class tableView extends Component {
   render() {
     const tableHead = ['Time', 'Activity'];
     const tableTitle = ['10:00', '12:00', '15:00', '17:00'];
@@ -32,3 +64,4 @@ const styles = StyleSheet.create({
   row: { height: 28},
   text: { textAlign: 'center' }
 })
+*/
