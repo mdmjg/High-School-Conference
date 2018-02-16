@@ -1,34 +1,63 @@
 import React, { Component } from "react";
-import { View, StyleSheet } from "react-native";
-import { Table, TableWrapper, Row, Rows, Col, Cols, Cell } from 'react-native-table-component';
+import { View, StyleSheet, Text } from "react-native";
 
-export default class tableView extends Component {
+export default class Mainscreen extends Component {
   render() {
-    const tableHead = ['Time', 'Activity'];
-    const tableTitle = ['10:00', '12:00', '15:00', '17:00'];
-    const tableData = [
-      ['Workshop 1'],
-      ['Workshop 2'],
-      ['Workshop 3'],
-      ['Workshop 4'],
-    ];
-    return (
-      <View>
-        <Table>
-          <Row data={tableHead} flexArr={[1, 2]} style={styles.head} textStyle={styles.text}/>
-          <TableWrapper style={{flexDirection: 'row'}}>
-            <Col data={tableTitle} style={styles.title} heightArr={[28,28]} textStyle={styles.text}/>
-            <Rows data={tableData} flexArr={[1, 1]} style={styles.row}/>
-          </TableWrapper>
-        </Table>
-      </View>
-    )
-  }
-}
-
+     return (
+       <View style={styles.container}>
+          <View style={styles.currEvent}>
+              <Text style={styles.eventHead}>Happening now </Text>
+              <Text style={styles.eventTitle}>Welcome Address</Text>
+              <Text style={styles.eventInfo}>East Forum</Text>
+          </View>
+           <View style={styles.nextEvent}>
+              <Text style={styles.eventHead}>Up next</Text>
+           </View>
+           <View style={styles.allEvents}>
+              <Text style={styles.eventHead}>Full schedule</Text>
+           </View>
+         </View>
+   )}
+ };
 const styles = StyleSheet.create({
-  head: { height: 40, backgroundColor: '#f1f8ff' },
-  title: { flex: 1, backgroundColor: '#f6f8fa' },
-  row: { height: 28},
-  text: { textAlign: 'center' }
-})
+  container: {
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'space-around',
+  },
+  currEvent: {
+    flex: 5,
+    backgroundColor: 'skyblue',
+    borderRadius: 20,
+    margin: 10,
+    marginTop: 20,
+  },
+  nextEvent: {
+    flex: 3,
+    backgroundColor: 'steelblue',
+    borderRadius: 20,
+    margin: 10,
+  },
+  allEvents: {
+    flex: 2,
+    backgroundColor: 'navy',
+    borderRadius: 20,
+    margin: 10,
+  },
+  eventHead: {
+    fontSize: 40,
+    margin: 10,
+    color: 'lightcyan',
+  },
+  eventTitle: {
+    fontSize: 24,
+    margin: 10,
+    fontWeight: 'bold',
+    color: 'white'
+  },
+  eventInfo: {
+    fontSize: 24,
+    marginLeft: 10,
+    color: 'white'
+  }
+});
