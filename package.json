@@ -5,22 +5,41 @@
   "devDependencies": {
     "react-native-scripts": "1.8.1",
     "jest-expo": "23.0.0",
-    "react-test-renderer": "16.0.0"
+    "react-test-renderer": "16.0.0",
+    "browserify": "~6.0.3",
+    "nodemon": "^1.2.1",
+    "reactify": "~1.1.1",
+    "uglify-js": "~2.4.15",
+    "watchify": "^3.1.1"
   },
   "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
   "scripts": {
-    "start": "react-native-scripts start",
+    "start": "npm install",
     "eject": "react-native-scripts eject",
     "android": "react-native-scripts android",
     "ios": "react-native-scripts ios",
-    "test": "node node_modules/jest/bin/jest.js --watch"
+    "test": "node node_modules/jest/bin/jest.js --watch",
+    "watch": "watchify app.js -o public/js/bundle.js -v",
+    "browserify": "browserify app.js | uglifyjs > public/js/bundle.js",
+    "build": "npm run browserify "
   },
   "jest": {
     "preset": "jest-expo"
   },
   "dependencies": {
     "expo": "^23.0.4",
-    "react": "16.0.0",
-    "react-native": "0.50.3"
+    "express": "~4.9.7",
+    "express-handlebars": "~1.1.0",
+    "mongoose": "^4.2.6",
+    "node-jsx": "~0.12.4",
+    "react": "^16.0.0",
+    "react-native": "0.50.3",
+    "socket.io": "^1.1.0",
+    "twitter": "^1.2.0"
+  },
+  "browserify": {
+    "transform": [
+      "reactify"
+    ]
   }
 }
