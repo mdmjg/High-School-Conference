@@ -5,10 +5,10 @@ export default class FirstScreen extends React.Component {
   static navigationOptions = {
     tabBarLabel: 'Home',
     tabBarIcon: ({tintColor}) => (
-      <Image
-      source={require('../images/home-2.png')}
-      style={{width:20, height: 20, tintColor: 'white'}}>
-      </Image>
+      // <Image
+      // source={require('../images/home-2.png')}
+      // style={{width:20, height: 20, tintColor: 'white'}}>
+      // </Image>
     )
   }
   render(){
@@ -22,7 +22,7 @@ export default class FirstScreen extends React.Component {
     <Text style={{fontSize: 30}}>
     This is tab 1
     </Text>
-    <Image source = {require('./map/Map.jpg')}/>
-    </View>
-  }
+    // <Image source = {require('./map/Map.jpg')}/>
+    // </View>
+  // }
 }
