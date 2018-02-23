@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
     margin: 10,
   },
   eventHead: {
-    fontSize: 40,
+    fontSize: 20,
     margin: 10,
     color: 'lightcyan',
   },
@@ -56,7 +56,12 @@ const styles = StyleSheet.create({
     color: 'white'
   },
   eventInfo: {
-    fontSize: 24,
+    fontSize: 16,
+    marginLeft: 10,
+    color: 'white'
+  },
+  eventAbout: {
+    fontSize: 12,
     marginLeft: 10,
     color: 'white'
   }
