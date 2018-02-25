@@ -9,19 +9,19 @@ export default class TwitterUI extends Component {
          <View style = {styles.imageInTweet}>
            <Image source = {{uri: 'https://facebook.github.io/react/logo-og.png'}}
                            style = {styles.profilePicture} />
+        </View>
          <View style = {styles.textInTweet}>
            <Text style = {styles.userNameText}> Hello world! You are amazing! </Text>
-        </View>
         </View>
       </View>
         <View style = {styles.tweetBox2}>
         <View style = {styles.imageInTweet}>
           <Image source = {{uri: 'https://facebook.github.io/react/logo-og.png'}}
                           style = {styles.profilePicture} />
+          </View>
           <View style = {styles.textInTweet}>
             <Text style = {styles.userNameText}> My name is Mar </Text>
             <Text style = {styles.userNameInfo}> Mar </Text>
-          </View>
           </View>
           </View>
         <View style = {styles.tweetBox3}>
@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
   userNameText: {
     fontFamily: 'helvetica',
     fontSize: 10,
-    color: 'white',
+    color: 'black',
     backgroundColor: 'transparent',
     textAlign: 'left',
     fontWeight: 'bold',
@@ -63,9 +63,9 @@ const styles = StyleSheet.create({
   userNameInfo: {
     fontFamily: 'helvetica',
     fontSize: 10,
-    color: 'gray',
+    color: 'pink',
     backgroundColor: 'transparent',
-    textAlign: 'right',
+    textAlign: 'left',
   },
   activeTitle: {
     color: 'red',
@@ -76,17 +76,19 @@ const styles = StyleSheet.create({
       borderRadius: 20,
       margin: 10,
       marginTop: 20,
+      flexDirection: 'row',
     },
     imageInTweet: {
-      flex: 3,
-      flexDirection: 'row',
+      flex: 1,
       justifyContent: 'center',
+      backgroundColor: 'black',
+      alignItems: 'center',
     },
-    textInTweet: { //For some reason this is being placed in the right, maybe its because it is whatever is to the right
+    textInTweet: {
       flex: 3,
-      flexDirection: 'row',
-      color: 'yellow', //Why isnt the color showing?
+      backgroundColor: 'yellow', 
       justifyContent: 'left',
+
     },
     tweetBox2: {
         flex: 9,
@@ -94,6 +96,7 @@ const styles = StyleSheet.create({
         borderRadius: 20,
         margin: 10,
         marginTop: 20,
+        flexDirection: 'row',
       //  justifyContent: 'center',
       },
       tweetBox3: {
@@ -102,6 +105,7 @@ const styles = StyleSheet.create({
           borderRadius: 20,
           margin: 10,
           marginTop: 20,
+          flexDirection: 'row',
         //  justifyContent: 'center',
         },
       profilePicture: {
