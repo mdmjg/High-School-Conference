@@ -3,58 +3,126 @@ import { Text, StyleSheet, View, Image } from 'react-native';
 
 export default class TwitterUI extends Component {
   render() {
+    //All of the following will be replaced with variables that will fetch the info from the tweets
     var picUrl = 'https://facebook.github.io/react/logo-og.png';
+    var tweet = 'Im the coolest tweet in town';
+    var userName = 'King Kylie';
+    var userNameInfo = '@KylieBitch ' + 'Feb 21';
     return (
       <View style = {styles.container}>
         <View style = {styles.tweetBox1}>
          <View style = {styles.imageInTweet}>
            <Image source = {{uri: picUrl}}
                            style = {styles.profilePicture} />
-        </View>
+         </View>
          <View style = {styles.textInTweet}>
           <View style = {styles.userNameBox}>
-            <Text style = {styles.userNameFont}> Hello world! You are amazing! </Text><Text style = {styles.userNameInfoFont}> Maria del Mar </Text>
+            <Text>
+              <Text style = {styles.userNameFont}> {userName} </Text><Text style = {styles.userNameInfoFont}> {userNameInfo} </Text>
+            </Text>
           </View>
           <View style = {styles.tweetTextBox}>
-            <Text style = {styles.tweetFont}> I am a tweet blah blah blah blah </Text>
+            <Text style = {styles.tweetFont}> {tweet} </Text>
           </View>
         </View>
         </View>
         <View style = {styles.tweetBox2}>
-          <View style = {styles.imageInTweet}>
-            <Image source = {{uri: picUrl}}
-                          style = {styles.profilePicture} />
+         <View style = {styles.imageInTweet}>
+           <Image source = {{uri: picUrl}}
+                           style = {styles.profilePicture} />
+         </View>
+         <View style = {styles.textInTweet}>
+          <View style = {styles.userNameBox}>
+            <Text>
+              <Text style = {styles.userNameFont}> {userName} </Text><Text style = {styles.userNameInfoFont}> {userNameInfo} </Text>
+            </Text>
           </View>
-          <View style = {styles.textInTweet}>
-            <View style = {styles.userNameBox}>
-              <Text>
-              <Text style = {styles.userNameFont}> My name is Mar </Text><Text style = {styles.userNameInfoFont}> Maria del Mar </Text>
-              </Text>
-            </View>
-            <View style = {styles.tweetTextBox}>
-              <Text style = {styles.tweetFont}> Mar </Text>
+          <View style = {styles.tweetTextBox}>
+            <Text style = {styles.tweetFont}> {tweet} </Text>
           </View>
-          </View>
-          </View>
-        <View style = {styles.tweetBox3}>
-          <Text style = {styles.userNameFont}> Im so cool </Text>
         </View>
-        <View style = {styles.tweetBox1}>
-          <Text style = {styles.userNameFont}> Im so cool </Text>
-        </View>
-        <View style = {styles.tweetBox2}>
-          <Text style = {styles.userNameFont}> Im so cool </Text>
         </View>
         <View style = {styles.tweetBox3}>
-          <Text style = {styles.userNameFont}> Im so cool </Text>
+         <View style = {styles.imageInTweet}>
+           <Image source = {{uri: picUrl}}
+                           style = {styles.profilePicture} />
+         </View>
+         <View style = {styles.textInTweet}>
+          <View style = {styles.userNameBox}>
+            <Text>
+              <Text style = {styles.userNameFont}> {userName} </Text><Text style = {styles.userNameInfoFont}> {userNameInfo} </Text>
+            </Text>
+          </View>
+          <View style = {styles.tweetTextBox}>
+            <Text style = {styles.tweetFont}> {tweet} </Text>
+          </View>
+        </View>
         </View>
         <View style = {styles.tweetBox1}>
-          <Text style = {styles.userNameFont}> Im so cool </Text>
+         <View style = {styles.imageInTweet}>
+           <Image source = {{uri: picUrl}}
+                           style = {styles.profilePicture} />
+         </View>
+         <View style = {styles.textInTweet}>
+          <View style = {styles.userNameBox}>
+            <Text>
+              <Text style = {styles.userNameFont}> {userName} </Text><Text style = {styles.userNameInfoFont}> {userNameInfo} </Text>
+            </Text>
+          </View>
+          <View style = {styles.tweetTextBox}>
+            <Text style = {styles.tweetFont}> {tweet} </Text>
+          </View>
+        </View>
         </View>
         <View style = {styles.tweetBox2}>
-          <Text style = {styles.userNameFont}> Im so cool </Text>
+         <View style = {styles.imageInTweet}>
+           <Image source = {{uri: picUrl}}
+                           style = {styles.profilePicture} />
+         </View>
+         <View style = {styles.textInTweet}>
+          <View style = {styles.userNameBox}>
+            <Text>
+              <Text style = {styles.userNameFont}> {userName} </Text><Text style = {styles.userNameInfoFont}> {userNameInfo} </Text>
+            </Text>
+          </View>
+          <View style = {styles.tweetTextBox}>
+            <Text style = {styles.tweetFont}> {tweet} </Text>
+          </View>
         </View>
-      </View>
+        </View>
+        <View style = {styles.tweetBox3}>
+         <View style = {styles.imageInTweet}>
+           <Image source = {{uri: picUrl}}
+                           style = {styles.profilePicture} />
+         </View>
+         <View style = {styles.textInTweet}>
+          <View style = {styles.userNameBox}>
+            <Text>
+              <Text style = {styles.userNameFont}> {userName} </Text><Text style = {styles.userNameInfoFont}> {userNameInfo} </Text>
+            </Text>
+          </View>
+          <View style = {styles.tweetTextBox}>
+            <Text style = {styles.tweetFont}> {tweet} </Text>
+          </View>
+        </View>
+        </View>
+        <View style = {styles.tweetBox1}>
+         <View style = {styles.imageInTweet}>
+           <Image source = {{uri: picUrl}}
+                           style = {styles.profilePicture} />
+         </View>
+         <View style = {styles.textInTweet}>
+          <View style = {styles.userNameBox}>
+            <Text>
+              <Text style = {styles.userNameFont}> {userName} </Text><Text style = {styles.userNameInfoFont}> {userNameInfo} </Text>
+            </Text>
+          </View>
+          <View style = {styles.tweetTextBox}>
+            <Text style = {styles.tweetFont}> {tweet} </Text>
+          </View>
+        </View>
+        </View>
+    </View>
     );
   }
 }
@@ -96,23 +164,23 @@ const styles = StyleSheet.create({
     imageInTweet: {
       flex: 1,
       justifyContent: 'center',
-      backgroundColor: 'black',
+      backgroundColor: 'transparent',
       alignItems: 'center',
     },
     textInTweet: { //This is the parent of the text that will be within the tweet
       flex: 3,
-      backgroundColor: 'yellow',
+      backgroundColor: 'transparent',
       justifyContent: 'left',
       flexDirection: 'column',
     },
     userNameBox: { //Child 1 from textInTweet
       flex: 1,
-      backgroundColor: 'orange',
+      backgroundColor: 'transparent',
       justifyContent: 'left',
     },
     tweetTextBox: { //Child 2 from text in tweet
       flex: 2,
-      backgroundColor: '#8b008b',
+      backgroundColor: 'transparent',
       justifyContent: 'left',
     },
     tweetBox2: {
