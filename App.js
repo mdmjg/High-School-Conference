@@ -3,48 +3,56 @@ import { Text, StyleSheet, View, Image } from 'react-native';
 
 export default class TwitterUI extends Component {
   render() {
+    var picUrl = 'https://facebook.github.io/react/logo-og.png';
     return (
       <View style = {styles.container}>
         <View style = {styles.tweetBox1}>
          <View style = {styles.imageInTweet}>
-           <Image source = {{uri: 'https://facebook.github.io/react/logo-og.png'}}
+           <Image source = {{uri: picUrl}}
                            style = {styles.profilePicture} />
         </View>
          <View style = {styles.textInTweet}>
-           <Text style = {styles.userNameText}> Hello world! You are amazing! </Text>
+          <View style = {styles.userNameBox}>
+            <Text style = {styles.userNameFont}> Hello world! You are amazing! </Text><Text style = {styles.userNameInfoFont}> Maria del Mar </Text>
+          </View>
+          <View style = {styles.tweetTextBox}>
+            <Text style = {styles.tweetFont}> I am a tweet blah blah blah blah </Text>
+          </View>
         </View>
         </View>
         <View style = {styles.tweetBox2}>
           <View style = {styles.imageInTweet}>
-            <Image source = {{uri: 'https://facebook.github.io/react/logo-og.png'}}
+            <Image source = {{uri: picUrl}}
                           style = {styles.profilePicture} />
           </View>
           <View style = {styles.textInTweet}>
             <View style = {styles.userNameBox}>
-              <Text style = {styles.userNameText}> My name is Mar </Text>
+              <Text>
+              <Text style = {styles.userNameFont}> My name is Mar </Text><Text style = {styles.userNameInfoFont}> Maria del Mar </Text>
+              </Text>
             </View>
             <View style = {styles.tweetTextBox}>
-              <Text style = {styles.userNameInfo}> Mar </Text>
+              <Text style = {styles.tweetFont}> Mar </Text>
           </View>
           </View>
           </View>
         <View style = {styles.tweetBox3}>
-          <Text style = {styles.userNameText}> Im so cool </Text>
+          <Text style = {styles.userNameFont}> Im so cool </Text>
         </View>
         <View style = {styles.tweetBox1}>
-          <Text style = {styles.userNameText}> Im so cool </Text>
+          <Text style = {styles.userNameFont}> Im so cool </Text>
         </View>
         <View style = {styles.tweetBox2}>
-          <Text style = {styles.userNameText}> Im so cool </Text>
+          <Text style = {styles.userNameFont}> Im so cool </Text>
         </View>
         <View style = {styles.tweetBox3}>
-          <Text style = {styles.userNameText}> Im so cool </Text>
+          <Text style = {styles.userNameFont}> Im so cool </Text>
         </View>
         <View style = {styles.tweetBox1}>
-          <Text style = {styles.userNameText}> Im so cool </Text>
+          <Text style = {styles.userNameFont}> Im so cool </Text>
         </View>
         <View style = {styles.tweetBox2}>
-          <Text style = {styles.userNameText}> Im so cool </Text>
+          <Text style = {styles.userNameFont}> Im so cool </Text>
         </View>
       </View>
     );
@@ -56,7 +64,7 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'space-around',
   },
-  userNameText: {
+  userNameFont: {
     fontFamily: 'helvetica',
     fontSize: 10,
     color: 'black',
@@ -64,15 +72,18 @@ const styles = StyleSheet.create({
     textAlign: 'left',
     fontWeight: 'bold',
   },
-  userNameInfo: {
+  userNameInfoFont: {
     fontFamily: 'helvetica',
     fontSize: 10,
     color: 'pink',
     backgroundColor: 'transparent',
     textAlign: 'left',
   },
-  activeTitle: {
-    color: 'red',
+  tweetFont: {
+    fontFamily: 'helvetica',
+    fontSize: 15,
+    color: 'black',
+    textAlign: 'left',
   },
   tweetBox1: {
       flex: 9,
