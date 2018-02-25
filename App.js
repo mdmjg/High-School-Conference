@@ -13,15 +13,19 @@ export default class TwitterUI extends Component {
          <View style = {styles.textInTweet}>
            <Text style = {styles.userNameText}> Hello world! You are amazing! </Text>
         </View>
-      </View>
+        </View>
         <View style = {styles.tweetBox2}>
-        <View style = {styles.imageInTweet}>
-          <Image source = {{uri: 'https://facebook.github.io/react/logo-og.png'}}
+          <View style = {styles.imageInTweet}>
+            <Image source = {{uri: 'https://facebook.github.io/react/logo-og.png'}}
                           style = {styles.profilePicture} />
           </View>
           <View style = {styles.textInTweet}>
-            <Text style = {styles.userNameText}> My name is Mar </Text>
-            <Text style = {styles.userNameInfo}> Mar </Text>
+            <View style = {styles.userNameBox}>
+              <Text style = {styles.userNameText}> My name is Mar </Text>
+            </View>
+            <View style = {styles.tweetTextBox}>
+              <Text style = {styles.userNameInfo}> Mar </Text>
+          </View>
           </View>
           </View>
         <View style = {styles.tweetBox3}>
@@ -84,11 +88,21 @@ const styles = StyleSheet.create({
       backgroundColor: 'black',
       alignItems: 'center',
     },
-    textInTweet: {
+    textInTweet: { //This is the parent of the text that will be within the tweet
       flex: 3,
-      backgroundColor: 'yellow', 
+      backgroundColor: 'yellow',
       justifyContent: 'left',
-
+      flexDirection: 'column',
+    },
+    userNameBox: { //Child 1 from textInTweet
+      flex: 1,
+      backgroundColor: 'orange',
+      justifyContent: 'left',
+    },
+    tweetTextBox: { //Child 2 from text in tweet
+      flex: 2,
+      backgroundColor: '#8b008b',
+      justifyContent: 'left',
     },
     tweetBox2: {
         flex: 9,
