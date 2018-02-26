@@ -10,6 +10,7 @@ export default class TwitterUI extends Component {
     var userNameInfo = '@KylieBitch ' + 'Feb 21';
     return (
       <View style = {styles.container}>
+        <Text style = {styles.headerText}> #weSTEMHSC </Text>
         <View style = {styles.tweetBox1}>
          <View style = {styles.imageInTweet}>
            <Image source = {{uri: picUrl}}
@@ -134,7 +135,7 @@ const styles = StyleSheet.create({
   },
   userNameFont: {
     fontFamily: 'helvetica',
-    fontSize: 10,
+    fontSize: 15,
     color: 'black',
     backgroundColor: 'transparent',
     textAlign: 'left',
@@ -142,8 +143,8 @@ const styles = StyleSheet.create({
   },
   userNameInfoFont: {
     fontFamily: 'helvetica',
-    fontSize: 10,
-    color: 'pink',
+    fontSize: 15,
+    color: 'white',
     backgroundColor: 'transparent',
     textAlign: 'left',
   },
@@ -155,7 +156,7 @@ const styles = StyleSheet.create({
   },
   tweetBox1: {
       flex: 9,
-      backgroundColor: 'rgb(181,212,229)', //This is a temporary color
+      backgroundColor: 'rgb(181,212,229)', 
       borderRadius: 20,
       margin: 10,
       marginTop: 20,
@@ -185,26 +186,33 @@ const styles = StyleSheet.create({
     },
     tweetBox2: {
         flex: 9,
-        backgroundColor: 'rgb(158,205,193)', //This is a temporary color
+        backgroundColor: 'rgb(158,205,193)',
         borderRadius: 20,
         margin: 10,
         marginTop: 20,
         flexDirection: 'row',
-      //  justifyContent: 'center',
       },
       tweetBox3: {
           flex: 9,
-          backgroundColor: 'rgb(93,129,177)', //This is a temporary color
+          backgroundColor: 'rgb(93,129,177)',
           borderRadius: 20,
           margin: 10,
           marginTop: 20,
           flexDirection: 'row',
-        //  justifyContent: 'center',
         },
       profilePicture: {
           width: 55,
           height: 55,
           borderRadius: 55/2,
-          alignItems: 'center', //How do I make the image show in the center
+          alignItems: 'center',
+        },
+        headerText: {
+          fontWeight: 'bold',
+          fontSize: 25,
+          marginTop: 30,
+          justifyContent: 'center',
+          alignItems: 'center',
+          textAlign: 'center',
+          fontFamily: 'helvetica',
         },
 });
