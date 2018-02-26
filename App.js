@@ -156,7 +156,7 @@ const styles = StyleSheet.create({
   },
   tweetBox1: {
       flex: 9,
-      backgroundColor: 'rgb(181,212,229)', 
+      backgroundColor: 'rgb(181,212,229)',
       borderRadius: 20,
       margin: 10,
       marginTop: 20,
