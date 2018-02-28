@@ -22,14 +22,14 @@ class FlatListComponent extends Component {
 
   makeRemoteRequest = () => {
     const { page, seed } = this.state;
-    const url = `http://localhost:8080/page/1/1`; // This is the API we would need to change
+    const url = `http://localhost:8080/page/1/1`;
     this.setState({ loading: true });
 
     fetch(url)
-      .then(res => res.json())
+      // .then(res => res.json())
       .then(res => {
         this.setState({
-          data: res.results, // page === 1 ? res.results : [...this.state.data, ...res.results],
+          data: page === 1 ? res.results : [...this.state.data, ...res.results],
           error: res.error || null,
           loading: false,
           refreshing: false
@@ -80,7 +80,7 @@ class FlatListComponent extends Component {
   renderHeader = () => {
     return (
       <View styles = {styles.container}>
-          <Text styles = {styles.headerText}> {this.state.data} </Text>
+          <Text styles = {styles.headerText}> #westem </Text>
       </View>
     )
   };
@@ -105,14 +105,14 @@ class FlatListComponent extends Component {
     return (
      <List containerStyle={{ borderTopWidth: 0, borderBottomWidth: 0 }}>
         <FlatList
-          data={this.state.data}
+        //  data={[{author: 'maria', body: 'hellooooo', avatar: "http://pbs.twimg.com/profile_images/956848336996364290/YPZxP4jj_normal.jpg"}, {author: 'maria', body: 'byee', avatar: "http://pbs.twimg.com/profile_images/956848336996364290/YPZxP4jj_normal.jpg"}]}
+        data = {this.state.data}
           renderItem={({ item }) => (
-            <View style = {styles.tweetBox1}>
-              //<Text > hello </Text>
-             <View style = {styles.imageInTweet}>
-               <Image source = {{uri: item.avatar}}
-                               style = {styles.profilePicture} />
-             </View>
+           <View style = {styles.tweetBox1}>
+            <View style = {styles.imageInTweet}>
+              <Image source = {{uri: item.avatar}}
+                              style = {styles.profilePicture} />
+            </View>
              <View style = {styles.textInTweet}>
               <View style = {styles.userNameBox}>
                 <Text>
@@ -126,7 +126,7 @@ class FlatListComponent extends Component {
             </View>
 
           )}
-          keyExtractor={item => item.email}
+          keyExtractor={item => item.author}
         //  ItemSeparatorComponent={this.renderSeparator}
           ListHeaderComponent={this.renderHeader}
           ListFooterComponent={this.renderFooter}
