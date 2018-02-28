@@ -7,12 +7,12 @@ export default class Mainscreen extends Component {
        <ScrollView>
        <View style={styles.container}>
         <Text style = {styles.header}> SCHEDULE </Text>
-          <View style={styles.lightBlue}>
+          <View style={styles.green}>
               <Text style={styles.eventHead}>8:30-9:30 </Text>
               <Text style={styles.eventTitle}>Registration & Opening Remarks</Text>
               <Text style={styles.eventInfo}>West Forum</Text>
           </View>
-           <View style={styles.green}>
+           <View style={styles.lightBlue}>
               <Text style={styles.eventHead}>9:30-10:00</Text>
               <Text style={styles.eventTitle}>Keynote Speaker</Text>
               <Text style={styles.eventInfo}>Torch Club</Text>
@@ -35,7 +35,7 @@ export default class Mainscreen extends Component {
                <Text style={styles.eventHead}>13:00-14:30 </Text>
                <Text style={styles.eventTitle}>Workshop Two</Text>
            </View>
-           <View style={styles.green}>
+           <View style={styles.lightBlue}>
                <Text style={styles.eventHead}>14:30-15:00 </Text>
                <Text style={styles.eventTitle}>Keynote Speaker</Text>
                <Text style={styles.eventInfo}>West Forum</Text>
@@ -45,12 +45,12 @@ export default class Mainscreen extends Component {
                  <Text style={styles.eventTitle}>Snack Break</Text>
                  <Text style={styles.eventInfo}>West Forum</Text>
            </View>
-           <View style={styles.allEvents}>
+           <View style={styles.lightBlue}>
                <Text style={styles.eventHead}>15:30-16:30 </Text>
                <Text style={styles.eventTitle}>Challenge </Text>
                <Text style={styles.eventInfo}>East Forum</Text>
            </View>
-           <View style={styles.currEvent}>
+           <View style={styles.green}>
                <Text style={styles.eventHead}> 16:30-17:15 </Text>
                <Text style={styles.eventTitle}>Student Panel & Closing Remarks</Text>
                <Text style={styles.eventInfo}>West Forum</Text>
@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
   },
   lightBlue: {
 //    flex: 2,
-    backgroundColor: 'rgb(181,212,229)',
+    backgroundColor: 'rgb(181,200,240)', // rgb(181,212,229)'
     borderRadius: 20,
     margin: 5,
   //  marginTop: 10,
@@ -123,6 +123,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'transparent',
     fontFamily: 'helvetica',
     opacity: 3,
+    fontStyle: 'italic',
   },
   eventAbout: {
     fontSize: 20,
@@ -130,6 +131,7 @@ const styles = StyleSheet.create({
     color: 'white',
     backgroundColor: 'transparent',
     fontFamily: 'helvetica',
+//    fontSize: 'italic'
   },
   header: {
     fontSize: 30,
@@ -139,5 +141,6 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginTop: 30,
     fontFamily: 'helvetica',
+    
   }
 });
