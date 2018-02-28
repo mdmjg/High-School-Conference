@@ -26,10 +26,10 @@ class FlatListComponent extends Component {
     this.setState({ loading: true });
 
     fetch(url)
-      // .then(res => res.json())
+      .then(res => res.json())
       .then(res => {
         this.setState({
-          data: page === 1 ? res.results : [...this.state.data, ...res.results],
+          data: res.results, //page === 1 ? res.results : [...this.state.data, ...res.results],
           error: res.error || null,
           loading: false,
           refreshing: false
@@ -37,6 +37,7 @@ class FlatListComponent extends Component {
       })
       .catch(error => {
         this.setState({ error, loading: false });
+
       });
   };
 
@@ -44,7 +45,7 @@ class FlatListComponent extends Component {
     this.setState(
       {
         page: 1,
-        seed: this.state.seed + 1,
+        seed: this.state.seed,
         refreshing: true
       },
       () => {
@@ -102,41 +103,52 @@ class FlatListComponent extends Component {
   };
 
   render() {
-    return (
-     <List containerStyle={{ borderTopWidth: 0, borderBottomWidth: 0 }}>
-        <FlatList
-        //  data={[{author: 'maria', body: 'hellooooo', avatar: "http://pbs.twimg.com/profile_images/956848336996364290/YPZxP4jj_normal.jpg"}, {author: 'maria', body: 'byee', avatar: "http://pbs.twimg.com/profile_images/956848336996364290/YPZxP4jj_normal.jpg"}]}
-        data = {this.state.data}
-          renderItem={({ item }) => (
-           <View style = {styles.tweetBox1}>
-            <View style = {styles.imageInTweet}>
-              <Image source = {{uri: item.avatar}}
-                              style = {styles.profilePicture} />
-            </View>
-             <View style = {styles.textInTweet}>
-              <View style = {styles.userNameBox}>
-                <Text>
-                  <Text style = {styles.userNameFont}> {item.author} </Text>
-                </Text>
-              </View>
-              <View style = {styles.tweetTextBox}>
-                <Text style = {styles.tweetFont}> {item.body} </Text>
-              </View>
-              </View>
-            </View>
 
-          )}
-          keyExtractor={item => item.author}
-        //  ItemSeparatorComponent={this.renderSeparator}
-          ListHeaderComponent={this.renderHeader}
-          ListFooterComponent={this.renderFooter}
-          onRefresh={this.handleRefresh}
-          refreshing={this.state.refreshing}
-          onEndReached={this.handleLoadMore}
-          onEndReachedThreshold={50}
-        />
-     </List>
-    );
+    if(this.state.error != null ){
+      this.state.seed = this.state.seed+10;
+      return (<Text> Error {this.state.error.toString()}</Text>);
+
+    }
+    else if (this.state.data == false) {
+      this.state.seed = this.state.seed+2;
+      return (<Text>Loading {this.state.seed}</Text>);
+    }else {
+      return (
+       <List containerStyle={{ borderTopWidth: 0, borderBottomWidth: 0 }}>
+          <FlatList
+          //  data={[{author: 'maria', body: 'hellooooo', avatar: "http://pbs.twimg.com/profile_images/956848336996364290/YPZxP4jj_normal.jpg"}, {author: 'maria', body: 'byee', avatar: "http://pbs.twimg.com/profile_images/956848336996364290/YPZxP4jj_normal.jpg"}]}
+          data = {this.state.data}
+            renderItem={({ item }) => (
+             <View style = {styles.tweetBox1}>
+              <View style = {styles.imageInTweet}>
+                <Image source = {{uri: item.avatar}}
+                                style = {styles.profilePicture} />
+              </View>
+               <View style = {styles.textInTweet}>
+                <View style = {styles.userNameBox}>
+                  <Text>
+                    <Text style = {styles.userNameFont}> {item.author} </Text>
+                  </Text>
+                </View>
+                <View style = {styles.tweetTextBox}>
+                  <Text style = {styles.tweetFont}> {item.body} </Text>
+                </View>
+                </View>
+              </View>
+
+            )}
+            keyExtractor={item => item.author}
+          //  ItemSeparatorComponent={this.renderSeparator}
+            ListHeaderComponent={this.renderHeader}
+            ListFooterComponent={this.renderFooter}
+            onRefresh={this.handleRefresh}
+            refreshing={this.state.refreshing}
+            onEndReached={this.handleLoadMore}
+            onEndReachedThreshold={50}
+          />
+       </List>
+      );
+    }
   }
 }
 const styles = StyleSheet.create({
