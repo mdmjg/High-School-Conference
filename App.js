@@ -1,22 +1,67 @@
 import React, { Component } from "react";
-import { View, StyleSheet, Text } from "react-native";
+import { View, StyleSheet, Text, ScrollView } from "react-native";
 
 export default class Mainscreen extends Component {
   render() {
      return (
+       <ScrollView>
        <View style={styles.container}>
-          <View style={styles.currEvent}>
-              <Text style={styles.eventHead}>Happening now </Text>
-              <Text style={styles.eventTitle}>Welcome Address</Text>
-              <Text style={styles.eventInfo}>East Forum</Text>
+        <Text style = {styles.header}> SCHEDULE </Text>
+          <View style={styles.lightBlue}>
+              <Text style={styles.eventHead}>8:30-9:30 </Text>
+              <Text style={styles.eventTitle}>Registration & Opening Remarks</Text>
+              <Text style={styles.eventInfo}>West Forum</Text>
           </View>
-           <View style={styles.nextEvent}>
-              <Text style={styles.eventHead}>Up next</Text>
+           <View style={styles.green}>
+              <Text style={styles.eventHead}>9:30-10:00</Text>
+              <Text style={styles.eventTitle}>Keynote Speaker</Text>
+              <Text style={styles.eventInfo}>Torch Club</Text>
+           </View>
+           <View style={styles.darkBlue}>
+              <Text style={styles.eventHead}>10:00-10:20</Text>
+              <Text style={styles.eventTitle}>Coffee Break</Text>
+              <Text style={styles.eventInfo}>Torch Club</Text>
+           </View>
+           <View style={styles.green}>
+               <Text style={styles.eventHead}>10:30-12:00 </Text>
+               <Text style={styles.eventTitle}>Workshop One</Text>
+           </View>
+           <View style={styles.darkBlue}>
+               <Text style={styles.eventHead}>12:00 - 13:00 </Text>
+               <Text style={styles.eventTitle}>Lunch</Text>
+               <Text style={styles.eventInfo}>Torch Club</Text>
+           </View>
+           <View style={styles.green}>
+               <Text style={styles.eventHead}>13:00-14:30 </Text>
+               <Text style={styles.eventTitle}>Workshop Two</Text>
+           </View>
+           <View style={styles.green}>
+               <Text style={styles.eventHead}>14:30-15:00 </Text>
+               <Text style={styles.eventTitle}>Keynote Speaker</Text>
+               <Text style={styles.eventInfo}>West Forum</Text>
+           </View>
+           <View style={styles.darkBlue}>
+                 <Text style={styles.eventHead}>15:00-15:30 </Text>
+                 <Text style={styles.eventTitle}>Snack Break</Text>
+                 <Text style={styles.eventInfo}>West Forum</Text>
            </View>
            <View style={styles.allEvents}>
-              <Text style={styles.eventHead}>Full schedule</Text>
+               <Text style={styles.eventHead}>15:30-16:30 </Text>
+               <Text style={styles.eventTitle}>Challenge </Text>
+               <Text style={styles.eventInfo}>East Forum</Text>
            </View>
-         </View>
+           <View style={styles.currEvent}>
+               <Text style={styles.eventHead}> 16:30-17:15 </Text>
+               <Text style={styles.eventTitle}>Student Panel & Closing Remarks</Text>
+               <Text style={styles.eventInfo}>West Forum</Text>
+           </View>
+           <View style={styles.lightBlue}>
+               <Text style={styles.eventHead}> 17:15-18:00 </Text>
+               <Text style={styles.eventTitle}>Optional Admissions Session</Text>
+               <Text style={styles.eventInfo}>West Forum</Text>
+        </View>
+        </View>
+        </ScrollView>
    )}
  };
 const styles = StyleSheet.create({
@@ -25,44 +70,74 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'space-around',
   },
-  currEvent: {
-    flex: 5,
-    backgroundColor: 'skyblue',
+  lightBlue: {
+//    flex: 2,
+    backgroundColor: 'rgb(181,212,229)',
     borderRadius: 20,
-    margin: 10,
-    marginTop: 20,
+    margin: 5,
+  //  marginTop: 10,
+    opacity: 5,
+    height: 100,
+    width: 365,
+    justifyContent: 'flex-start',
   },
-  nextEvent: {
-    flex: 3,
-    backgroundColor: 'steelblue',
+  green: {
+  //  flex: 2,
+    backgroundColor: 'rgb(158,205,193)',
     borderRadius: 20,
-    margin: 10,
+    margin: 5,
+    opacity: 5,
+    height: 100,
+    width: 365,
   },
-  allEvents: {
-    flex: 2,
-    backgroundColor: 'navy',
+  darkBlue: {
+//    flex: 2,
+    backgroundColor: 'rgb(93,129,177)',
     borderRadius: 20,
-    margin: 10,
+    margin: 5,
+    height: 100,
+    width: 365,
   },
   eventHead: {
-    fontSize: 20,
+    fontSize: 15,
     margin: 10,
-    color: 'lightcyan',
+    color: 'beige',
+    backgroundColor: 'transparent',
+    fontFamily: 'helvetica',
   },
   eventTitle: {
-    fontSize: 24,
+    fontSize: 20,
     margin: 10,
+    marginTop: 0,
     fontWeight: 'bold',
-    color: 'white'
+    color: 'white',
+    backgroundColor: 'transparent',
+    fontFamily: 'helvetica',
+
   },
   eventInfo: {
-    fontSize: 16,
-    marginLeft: 10,
-    color: 'white'
+    fontSize: 15,
+    margin: 10,
+    marginTop: 0,
+    color: 'aliceblue',
+    backgroundColor: 'transparent',
+    fontFamily: 'helvetica',
+    opacity: 3,
   },
   eventAbout: {
-    fontSize: 12,
-    marginLeft: 10,
-    color: 'white'
+    fontSize: 20,
+    textAlign: 'center',
+    color: 'white',
+    backgroundColor: 'transparent',
+    fontFamily: 'helvetica',
+  },
+  header: {
+    fontSize: 30,
+    fontWeight: 'bold',
+    color: 'gray',
+    backgroundColor: 'transparent',
+    textAlign: 'center',
+    marginTop: 30,
+    fontFamily: 'helvetica',
   }
 });
