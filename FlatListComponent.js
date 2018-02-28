@@ -22,14 +22,14 @@ class FlatListComponent extends Component {
 
   makeRemoteRequest = () => {
     const { page, seed } = this.state;
-    const url = `http://localhost:8080/page/1/1`;
+    const url = 'https://high-school-conference-server.herokuapp.com/page/1/1';
     this.setState({ loading: true });
 
     fetch(url)
       .then(res => res.json())
       .then(res => {
         this.setState({
-          data: res.results, //page === 1 ? res.results : [...this.state.data, ...res.results],
+          data: res, //page === 1 ? res.results : [...this.state.data, ...res.results],
           error: res.error || null,
           loading: false,
           refreshing: false
@@ -80,9 +80,10 @@ class FlatListComponent extends Component {
 
   renderHeader = () => {
     return (
-      <View styles = {styles.container}>
-          <Text styles = {styles.headerText}> #westem </Text>
-      </View>
+      <Text> WESTEM </Text>
+      // <View styles = {styles.container}>
+      //     <Text styles = {styles.headerText}> #westem </Text>
+      // </View>
     )
   };
 
@@ -111,13 +112,14 @@ class FlatListComponent extends Component {
     }
     else if (this.state.data == false) {
       this.state.seed = this.state.seed+2;
-      return (<Text>Loading {this.state.seed}</Text>);
+      return (<Text> Loading {this.state.seed}</Text>);
     }else {
+      console.log("Data " + JSON.stringify(this.state.data));
       return (
        <List containerStyle={{ borderTopWidth: 0, borderBottomWidth: 0 }}>
           <FlatList
           //  data={[{author: 'maria', body: 'hellooooo', avatar: "http://pbs.twimg.com/profile_images/956848336996364290/YPZxP4jj_normal.jpg"}, {author: 'maria', body: 'byee', avatar: "http://pbs.twimg.com/profile_images/956848336996364290/YPZxP4jj_normal.jpg"}]}
-          data = {this.state.data}
+            data = {this.state.data}
             renderItem={({ item }) => (
              <View style = {styles.tweetBox1}>
               <View style = {styles.imageInTweet}>
