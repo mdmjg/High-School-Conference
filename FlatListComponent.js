@@ -80,7 +80,9 @@ class FlatListComponent extends Component {
 
   renderHeader = () => {
     return (
-      <Text> WESTEM </Text>
+      <View style = {styles.container}>
+        <Text style = {styles.headerText}> #WESTEMHSC </Text>
+      </View>
       // <View styles = {styles.container}>
       //     <Text styles = {styles.headerText}> #westem </Text>
       // </View>
@@ -241,6 +243,7 @@ const styles = StyleSheet.create({
           alignItems: 'center',
           textAlign: 'center',
           fontFamily: 'helvetica',
+          color: 'rgb(158,205,193)',
         },
 });
 
