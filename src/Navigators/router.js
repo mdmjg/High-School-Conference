@@ -5,11 +5,12 @@ import {TabNavigator} from "react-navigation";
 import FirstScreen from '../components/tabs/FirstScreen';
 import SecondScreen from '../components/tabs/SecondScreen';
 import ThirdScreen from '../components/tabs/ThirdScreen';
+import FlatListComponent from '../components/tabs/FlatListComponent';
 
 const MyScreenNavigator = TabNavigator({
   Tab1: {screen: FirstScreen},
   Tab2: {screen:SecondScreen},
-  Tab3: {screen: ThirdScreen}
+  Tab3: {screen: FlatListComponent}
 },
 {
   tabBarPosition: 'bottom',
