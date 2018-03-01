@@ -6,17 +6,19 @@ export default class SecondScreen extends React.Component {
     tabBarLabel: 'Map'
   }
   render(){
-    return <View style={
-      {
-        flex:1,
-        justifyContent: 'center',
-        alignItems: 'center'
-      }
-    }>
-    <Text style={{fontSize: 30}}>
-    This is tab 2
-    </Text>
+    return (
+      <View style={
+        {
+          flex:1,
+          justifyContent: 'center',
+          alignItems: 'center'
+        }
+      }>
+      <Text style={{fontSize: 30}}>
+      This is tab 2
+      </Text>
 
-    </View>
+      </View>
+    )
   }
 }
