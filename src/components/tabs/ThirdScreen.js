@@ -3,7 +3,7 @@ import {Text, View, Button, Image} from 'react-native';
 
 export default class ThirdScreen extends React.Component {
   static navigationOptions = {
-    tabBarLabel: 'Twitter'
+    tabBarLabel: 'Social'
   }
   render(){
     return <View style={
