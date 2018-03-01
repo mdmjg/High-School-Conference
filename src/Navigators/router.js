@@ -9,8 +9,7 @@ import FlatListComponent from '../components/tabs/FlatListComponent';
 
 const MyScreenNavigator = TabNavigator({
   Tab1: {screen: FirstScreen},
-  Tab2: {screen:SecondScreen},
-  Tab3: {screen: FlatListComponent}
+  Tab2: {screen: FlatListComponent}
 },
 {
   tabBarPosition: 'bottom',

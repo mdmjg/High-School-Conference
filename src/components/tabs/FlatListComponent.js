@@ -25,7 +25,7 @@ export default class FlatListComponent extends Component {
 
   makeRemoteRequest = () => {
     const { page, seed } = this.state;
-    const url = 'https://high-school-conference-server.herokuapp.com/page/1/1';
+    const url = 'https://high-school-conference-server.herokuapp.com/page/0/0';
     this.setState({ loading: true });
 
     fetch(url)
@@ -110,12 +110,12 @@ export default class FlatListComponent extends Component {
 
     if(this.state.error != null ){
       this.state.seed = this.state.seed+10;
-      return (<Text> Error {this.state.error.toString()}</Text>);
+      return (<Text style = {styles.header}> Error {this.state.error.toString()}</Text>);
 
     }
     else if (this.state.data == false) {
       this.state.seed = this.state.seed+2;
-      return (<Text> Loading {this.state.seed}</Text>);
+      return (<Text style = {styles.header}> Loading...</Text>);
     }else {
       console.log("Data " + JSON.stringify(this.state.data));
       return (
