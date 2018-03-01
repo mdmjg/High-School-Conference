@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import { View,Text, StyleSheet } from "react-native";
 import { Table, TableWrapper, Row, Rows, Col, Cols, Cell } from 'react-native-table-component';
 import {TabNavigator} from "react-navigation";
-import FirstScreen from '../../tabs/FirstScreen';
-import SecondScreen from '../../tabs/SecondScreen';
-import ThirdScreen from '../../tabs/ThirdScreen';
+import FirstScreen from '../components/tabs/FirstScreen';
+import SecondScreen from '../components/tabs/SecondScreen';
+import ThirdScreen from '../components/tabs/ThirdScreen';
 
 const MyScreenNavigator = TabNavigator({
   Tab1: {screen: FirstScreen},

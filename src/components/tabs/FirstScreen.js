@@ -6,7 +6,7 @@ export default class FirstScreen extends React.Component {
     tabBarLabel: 'Home',
     tabBarIcon: ({tintColor}) => (
       <Image
-      source={require('../images/sched.png')}
+      source={require('../../../images/sched.png')}
       style={{width:20, height: 20, tintColor: 'white'}}>
       </Image>
     )
